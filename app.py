@@ -1,8 +1,14 @@
 from flask import Flask, redirect, render_template
 from flask_socketio import SocketIO
+import os
+
+secret_key = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key_here' # Replace with a strong secret key
+if secret_key: 
+    app.config['SECRET_KEY'] = secret_key
+else: 
+    print("No secret key found")
 socketio = SocketIO(app)
 
 @app.route("/")
