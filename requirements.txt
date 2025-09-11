@@ -18,3 +18,4 @@ flask_migrate==4.1.0
 flask_session==0.8.0
 flask_wtf=1.2.2
 wtforms==3.2.1
+bleach==6.2.0
